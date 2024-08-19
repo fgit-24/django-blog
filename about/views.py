@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import About
+from .forms import CollaborateForm
 
 
 def about_me(request):
@@ -11,5 +12,8 @@ def about_me(request):
     return render(
         request,
         "about/about.html",
-        {"about": about},
+        {
+            "about": about,
+            "collaborate_form": collaborate_form
+        },
     )
